@@ -1,2 +1,0 @@
-#RewriteEngine on
-#RewriteRule ^game/([0-9]+)$ index.php?page=game&id=$1
