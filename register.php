@@ -1,12 +1,14 @@
-<?php include 'templates/header.php' ?>
+<?php include_once 'templates/header.php' ?>
+<?php include_once './helpers/session_helper.php' ?>
 
 <section class="register">
     <div class="register__container">
         <h1 class="register__title">Créer un compte</h1>
-        <form action="" method="post" class="form">
+        <form action="./controllers/Users.php" method="post" class="form">
+            <input type="hidden" name="type" value="register">
             <div class="form__contents">
                 <div class="form__content">
-                    <label for="username" class="form__content-label">Votre nom</label>
+                    <label for="username" class="form__content-label">Votre nom d'utilisateur</label>
                     <input type="text" name="username" id="username" class="form__content-input">
                 </div>
                 <div class="form__content">
@@ -24,8 +26,8 @@
                     <input type="password" name="passwordConfirm" id="passwordConfirm" class="form__content-input">
                 </div>
             </div>
-            <span class="form__instruction">Tout les champs sont obligatoires</span>
-            <input type="submit" value="Envoyer" class="form__submit">
+            <?php flash('register') ?>
+            <input type="submit" value="Envoyer" name="submit" class="form__submit">
         </form>
     </div>
 </section>
