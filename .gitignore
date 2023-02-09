@@ -1,0 +1,5 @@
+# JetBrains Folder
+/.idea
+
+#composer
+/vendor
