@@ -1,3 +1,5 @@
+<?php session_start() ?>
+
 <!doctype html>
 <html lang="fr">
     <head>
@@ -31,12 +33,21 @@
                         </li>
                     </ul>
                     <ul class="nav__connect">
-                        <li>
-                            <a href="register.php" class="nav__connect-link nav__connect-register">S'abonner</a>
-                        </li>
-                        <li>
-                            <a href="connexion.php" class="nav__connect-link nav__connect-connexion">Se connecter</a>
-                        </li>
+                        <?php if (isset($_SESSION['username'])) { ?>
+                            <li>
+                                <span class="nav__connect-link nav__connect-name">Bienvenue <?= $_SESSION['username'] ?></span>
+                            </li>
+                            <li>
+                                <a href="live.php" class="nav__connect-link nav__connect-connexion">Live</a>
+                            </li>
+                        <?php } else { ?>
+                            <li>
+                                <a href="register.php" class="nav__connect-link nav__connect-register">S'abonner</a>
+                            </li>
+                            <li>
+                                <a href="connexion.php" class="nav__connect-link nav__connect-connexion">Se connecter</a>
+                            </li>
+                        <?php } ?>
                     </ul>
                 </div>
             </nav>
@@ -48,12 +59,21 @@
                     <li>
                         <a href="#bar" class="nav__menu-link">Telefoot bar</a>
                     </li>
-                    <li>
-                        <a href="register.php" class="nav__menu-link nav__menu-active">S'abonner</a>
-                    </li>
-                    <li>
-                        <a href="connexioin.php" class="nav__menu-link">Se connecter</a>
-                    </li>
+                    <?php if (isset($_SESSION['username'])) { ?>
+                        <li>
+                            <a href="live.php" class="nav__menu-link">Live</a>
+                        </li>
+                        <li>
+                            <a href="./controllers/Users.php?q=logout" class="nav__menu-link">Se déconnecter</a>
+                        </li>
+                    <?php } else { ?>
+                        <li>
+                            <a href="register.php" class="nav__menu-link">S'abonner</a>
+                        </li>
+                        <li>
+                            <a href="connexion.php" class="nav__menu-link">Se connecter</a>
+                        </li>
+                    <?php } ?>
                 </ul>
             </div>
         </header>

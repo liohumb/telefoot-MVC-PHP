@@ -269,6 +269,11 @@ ul {
       text-transform: uppercase;
       padding: 2rem;
     }
+
+    &-name {
+      font-size: 1.35rem;
+      color: #cca053;
+    }
     
     &-register {
       color: #000;
@@ -838,9 +843,10 @@ ul {
   }
 }
 
-/* REGISTER CONNEXION */
+/* REGISTER CONNEXION RESET */
 .register,
-.connexion {
+.connexion,
+.reset {
   width: 100%;
   height: 100vh;
   display: grid;
@@ -888,6 +894,11 @@ ul {
     }
   }
 
+  &__logo {
+    width: 33%;
+    object-fit: cover;
+  }
+
   &__form {
     gap: 0;
 
@@ -905,6 +916,7 @@ ul {
   &__instruction {
     font-size: 1.75rem;
     color: #c6c6c6;
+    text-align: center;
 
     @media (max-width: 425px) {
       font-size: 1.25rem;
@@ -935,6 +947,14 @@ ul {
     @media (max-width: 425px) {
       width: 90%;
     }
+  }
+}
+
+.reset {
+  &__subtitle {
+    font-size: 1.7rem;
+    color: #c6c6c6;
+    padding: 2rem 0;
   }
 }
 

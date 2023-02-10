@@ -256,6 +256,10 @@ ul {
   text-transform: uppercase;
   padding: 2rem;
 }
+.nav__connect-name {
+  font-size: 1.35rem;
+  color: #cca053;
+}
 .nav__connect-register {
   color: #000;
   background: #cca053;
@@ -788,9 +792,10 @@ ul {
   }
 }
 
-/* REGISTER CONNEXION */
+/* REGISTER CONNEXION RESET */
 .register,
-.connexion {
+.connexion,
+.reset {
   width: 100%;
   height: 100vh;
   display: grid;
@@ -798,19 +803,22 @@ ul {
 }
 @media (max-width: 768px) {
   .register,
-  .connexion {
+  .connexion,
+  .reset {
     height: 100%;
     padding: 4rem 0 0 0;
   }
 }
 @media (max-width: 425px) {
   .register,
-  .connexion {
+  .connexion,
+  .reset {
     padding: 6rem 0 0 0;
   }
 }
 .register__container,
-.connexion__container {
+.connexion__container,
+.reset__container {
   width: 100%;
   height: 100%;
   display: flex;
@@ -820,13 +828,15 @@ ul {
   padding: 10%;
 }
 .register__title,
-.connexion__title {
+.connexion__title,
+.reset__title {
   font-size: 3.25rem;
   color: #c6c6c6;
 }
 @media (max-width: 375px) {
   .register__title,
-  .connexion__title {
+  .connexion__title,
+  .reset__title {
     font-size: 2.5rem;
   }
 }
@@ -844,6 +854,10 @@ ul {
     width: 100%;
   }
 }
+.connexion__logo {
+  width: 33%;
+  object-fit: cover;
+}
 .connexion__form {
   gap: 0;
 }
@@ -857,6 +871,7 @@ ul {
 .connexion__forget, .connexion__instruction {
   font-size: 1.75rem;
   color: #c6c6c6;
+  text-align: center;
 }
 @media (max-width: 425px) {
   .connexion__forget, .connexion__instruction {
@@ -888,6 +903,12 @@ ul {
   .connexion__register {
     width: 90%;
   }
+}
+
+.reset__subtitle {
+  font-size: 1.7rem;
+  color: #c6c6c6;
+  padding: 2rem 0;
 }
 
 /* FOOTER */
