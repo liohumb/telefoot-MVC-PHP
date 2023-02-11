@@ -792,10 +792,11 @@ ul {
   }
 }
 
-/* REGISTER CONNEXION RESET */
+/* REGISTER CONNEXION RESET NEW */
 .register,
 .connexion,
-.reset {
+.reset,
+.new {
   width: 100%;
   height: 100vh;
   display: grid;
@@ -804,7 +805,8 @@ ul {
 @media (max-width: 768px) {
   .register,
   .connexion,
-  .reset {
+  .reset,
+  .new {
     height: 100%;
     padding: 4rem 0 0 0;
   }
@@ -812,13 +814,15 @@ ul {
 @media (max-width: 425px) {
   .register,
   .connexion,
-  .reset {
+  .reset,
+  .new {
     padding: 6rem 0 0 0;
   }
 }
 .register__container,
 .connexion__container,
-.reset__container {
+.reset__container,
+.new__container {
   width: 100%;
   height: 100%;
   display: flex;
@@ -829,14 +833,16 @@ ul {
 }
 .register__title,
 .connexion__title,
-.reset__title {
+.reset__title,
+.new__title {
   font-size: 3.25rem;
   color: #c6c6c6;
 }
 @media (max-width: 375px) {
   .register__title,
   .connexion__title,
-  .reset__title {
+  .reset__title,
+  .new__title {
     font-size: 2.5rem;
   }
 }

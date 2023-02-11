@@ -1,5 +1,6 @@
 <?php
 require_once '../libraries/Database.php';
+
 class User
 {
     private Database $db;
@@ -9,7 +10,8 @@ class User
         $this->db = new Database;
     }
 
-    public function findUsersByEmailOrUsername($email, $username) {
+    public function findUsersByEmailOrUsername($email, $username)
+    {
         $this->db->query("SELECT * FROM users WHERE username = :username OR email = :email");
 
         $this->db->bind(':username', $username);
@@ -24,7 +26,8 @@ class User
         }
     }
 
-    public function register($data) {
+    public function register($data)
+    {
         $this->db->query("INSERT INTO users (username, email, password) VALUES (:username, :email, :password)");
 
         $this->db->bind(':username', $data['username']);
@@ -47,6 +50,21 @@ class User
         $hashedPassword = $row->password;
 
         if (password_verify($password, $hashedPassword)) {
+            return $row;
+        } else {
+            return false;
+        }
+    }
+
+    public function resetPassword(string $selector, $currentDate)
+    {
+        $this->db->query('SELECT * FROM reset WHERE  selector = :selector AND reset.expire >= :currentDate');
+        $this->db->bind(':selector', $selector);
+        $this->db->bind(':currentDate', $currentDate);
+
+        $row = $this->db->single();
+
+        if ($this->db->rowCount() > 0) {
             return $row;
         } else {
             return false;
