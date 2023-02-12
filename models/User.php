@@ -26,7 +26,7 @@ class User
         }
     }
 
-    public function register($data)
+    public function register($data): bool
     {
         $this->db->query("INSERT INTO users (username, email, password) VALUES (:username, :email, :password)");
 
